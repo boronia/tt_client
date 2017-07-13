@@ -3,7 +3,8 @@ import {
   Text,
   Image,
   View,
-  StyleSheet
+  StyleSheet,
+  TouchableOpacity
 } from 'react-native';
 
 import { Constants } from 'expo';
@@ -36,10 +37,12 @@ export default class HomeScreen extends Component {
               <Text> SEARCH </Text>
            </View>
            <View style={small_pane_styles.container}>
-              <Image
-                source={require('./images/scan.png')}
-                style={{ height: 100, width: 100}}
-              />
+             <TouchableOpacity onPress={() => navigate('Scan')}>
+                <Image
+                  source={require('./images/scan.png')}
+                  style={{ height: 100, width: 100}}
+                />
+             </TouchableOpacity>
               <Text> SCAN </Text>
            </View>
         </View>
@@ -76,8 +79,9 @@ const full_pane_styles = StyleSheet.create({
 const small_pane_styles = StyleSheet.create({
   container: {
     flex: 1,
+    padding: 10,
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: 'beige'
+    backgroundColor: 'rgba(204, 204, 102, 0.109803921568627)'
   },
 });
