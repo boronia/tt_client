@@ -26,8 +26,39 @@ export default class HomeScreen extends Component {
           <Text> Search. Scan. Browse. </Text>
           <Text> Check which bin to put it in. </Text>
         </View>
-        <View style={{flex: 1, backgroundColor: 'skyblue'}} />
-        <View style={{flex: 1, backgroundColor: 'steelblue'}} />
+
+        <View style={{flex: 1, flexDirection: 'row'}}>
+           <View style={small_pane_styles.container}>
+              <Image
+                source={require('./images/search.png')}
+                style={{ height: 100, width: 100}}
+              />
+              <Text> SEARCH </Text>
+           </View>
+           <View style={small_pane_styles.container}>
+              <Image
+                source={require('./images/scan.png')}
+                style={{ height: 100, width: 100}}
+              />
+              <Text> SCAN </Text>
+           </View>
+        </View>
+        <View style={{flex: 1, flexDirection: 'row'}}>
+           <View style={small_pane_styles.container}>
+              <Image
+                source={require('./images/plastics.png')}
+                style={{ height: 100, width: 100}}
+              />
+              <Text>PLASTICS</Text>
+           </View>
+           <View style={small_pane_styles.container}>
+              <Image
+                source={require('./images/bin_guide.png')}
+                style={{ height: 100, width: 100}}
+              />
+              <Text> BIN GUIDE </Text>
+           </View>
+        </View>
       </View>
     );
   }
@@ -39,5 +70,14 @@ const full_pane_styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     backgroundColor: 'white',
+  },
+});
+
+const small_pane_styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: 'beige'
   },
 });
