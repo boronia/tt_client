@@ -35,11 +35,28 @@ export default class ScanScreen extends Component {
      });
    };
 
+   // Data is in this format: { type: "EAU13", data: "9182747290"}
    _handleBarCodeRead = data => {
-     Alert.alert(
-       'Scan successful!',
-       JSON.stringify(data)
-     );
+     urlBase = 'http://36ab32e3.ngrok.io/barcodes/search'
+     barcode = data['data']
+     url = urlBase + '?barcode=' + barcode
+     fetch(url)
+       .then((response) => response.json())
+       .then((responseJson) =>
+         {
+           Alert.alert(
+             'Scan successful!',
+             responseJson.data.attributes.description
+           );
+         }
+        )
+       .catch((error) =>
+         {
+           Alert.alert(
+             'Error! Barcode not found: ',
+             url
+         );
+       });
    };
 
   render() {

@@ -57,7 +57,7 @@ export default class HomeScreen extends Component {
            <View style={small_pane_styles.container}>
               <Image
                 source={require('./images/bin_guide.png')}
-                style={{ height: 100, width: 100}}
+                style={{ height: 90, width: 77}}
               />
               <Text> BIN GUIDE </Text>
            </View>
