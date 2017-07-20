@@ -30,10 +30,12 @@ export default class HomeScreen extends Component {
 
         <View style={{flex: 1, flexDirection: 'row'}}>
            <View style={small_pane_styles.container}>
-              <Image
-                source={require('./images/search.png')}
-                style={{ height: 100, width: 100}}
-              />
+             <TouchableOpacity onPress={() => navigate('Scan')}>
+                <Image
+                  source={require('./images/search.png')}
+                  style={{ height: 100, width: 100}}
+                />
+             </TouchableOpacity>
               <Text> SEARCH </Text>
            </View>
            <View style={small_pane_styles.container}>
@@ -48,17 +50,21 @@ export default class HomeScreen extends Component {
         </View>
         <View style={{flex: 1, flexDirection: 'row'}}>
            <View style={small_pane_styles.container}>
-              <Image
-                source={require('./images/plastics.png')}
-                style={{ height: 100, width: 100}}
-              />
+             <TouchableOpacity onPress={() => navigate('Plastics')}>
+                <Image
+                  source={require('./images/plastics.png')}
+                  style={{ height: 100, width: 100}}
+                />
+             </TouchableOpacity>
               <Text>PLASTICS</Text>
            </View>
            <View style={small_pane_styles.container}>
+           <TouchableOpacity onPress={() => navigate('Scan')}>
               <Image
                 source={require('./images/bin_guide.png')}
-                style={{ height: 90, width: 77}}
+                style={{ height: 100, width: 100}}
               />
+           </TouchableOpacity>
               <Text> BIN GUIDE </Text>
            </View>
         </View>
