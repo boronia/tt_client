@@ -52,22 +52,12 @@ const styles_listview = StyleSheet.create({
   },
 });
 
-// const Row = (props) => (
-//   <View style={styles_row.container}>
-//     <Image source={require('./images/yellow_bin.png')} style={styles_row.photo} />
-//     <Text style={styles_row.text}>
-//       {`${props.description}...`}
-//     </Text>
-//   </View>
-// );
-
 export default class PlasticScreen extends Component {
 
   // Nav options can be defined as a function of the screen's props:
   static navigationOptions = ({ navigation }) => ({
     title: `Plastics Guide`,
   });
-
 
   constructor(props) {
     super(props);

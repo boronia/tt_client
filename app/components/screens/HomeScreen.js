@@ -59,7 +59,7 @@ export default class HomeScreen extends Component {
               <Text>PLASTICS</Text>
            </View>
            <View style={small_pane_styles.container}>
-           <TouchableOpacity onPress={() => navigate('Scan')}>
+           <TouchableOpacity onPress={() => navigate('Bin')}>
               <Image
                 source={require('./images/bin_guide.png')}
                 style={{ height: 100, width: 100}}
