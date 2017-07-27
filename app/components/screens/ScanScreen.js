@@ -20,7 +20,8 @@ export default class ScanScreen extends Component {
     super(props);
 
     this.state = {
-      hasCameraPermission: null
+      hasCameraPermission: null,
+      scanned : 'false'
     };
   }
 
@@ -37,26 +38,29 @@ export default class ScanScreen extends Component {
 
    // Data is in this format: { type: "EAU13", data: "9182747290"}
    _handleBarCodeRead = data => {
-     urlBase = 'http://f66f3a69.ngrok.io/barcodes/search'
-     barcode = data['data']
-     url = urlBase + '?barcode=' + barcode
-     fetch(url)
-       .then((response) => response.json())
-       .then((responseJson) =>
+     const { navigate } = this.props.navigation;
+     if (this.state.scanned == 'false') {
+       urlBase = 'http://f66f3a69.ngrok.io/barcodes/search'
+       barcode = data['data']
+       url = urlBase + '?barcode=' + barcode
+       fetch(url)
+         .then(this.setState({scanned : 'true'}))
+         .then((response) => response.json())
+         .then((responseJson) =>
          {
            Alert.alert(
              'Scan successful!',
              responseJson.description
            );
-         }
-        )
-       .catch((error) =>
+         })
+         .catch((error) =>
          {
            Alert.alert(
              'Error! Barcode not found: ',
              url
-         );
-       });
+           );
+         });
+     }
    };
 
   render() {
@@ -67,8 +71,8 @@ export default class ScanScreen extends Component {
               <Text>Requesting for camera permission</Text> :
             this.state.hasCameraPermission === false ?
               <Text>Camera permission is not granted</Text> :
-            <BarCodeScanner onBarCodeRead={this._handleBarCodeRead}
-              style={{ height: 200, width: 200 }}
+            <BarCodeScanner onBarCodeRead={this._handleBarCodeRead.bind(this)}
+              style={ StyleSheet.absoluteFill }
           />
           }
         </View>
