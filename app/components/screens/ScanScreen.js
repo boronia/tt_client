@@ -37,7 +37,7 @@ export default class ScanScreen extends Component {
 
    // Data is in this format: { type: "EAU13", data: "9182747290"}
    _handleBarCodeRead = data => {
-     urlBase = 'http://acdedc34.ngrok.io/barcodes/search'
+     urlBase = 'http://f66f3a69.ngrok.io/barcodes/search'
      barcode = data['data']
      url = urlBase + '?barcode=' + barcode
      fetch(url)
@@ -46,7 +46,7 @@ export default class ScanScreen extends Component {
          {
            Alert.alert(
              'Scan successful!',
-             responseJson.barcode.description
+             responseJson.description
            );
          }
         )

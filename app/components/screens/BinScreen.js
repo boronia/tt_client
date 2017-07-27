@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { TouchableOpacity, Image, View, StyleSheet } from 'react-native';
+import { Text, TouchableOpacity, Image, View, StyleSheet } from 'react-native';
 
 const styles = StyleSheet.create({
   container: {
@@ -28,22 +28,35 @@ export default class BinScreen extends Component {
     title: `Bin Guide`,
   });
 
+  constructor(props) {
+    super(props);
+    this.state = {
+      screen_id : 'compost'
+    };
+  }
+
+  onPress(sid) {
+    this.setState({
+      screen_id: sid,
+    });
+  }
+
   render() {
 
     return (
-      // Try setting `alignItems` to 'flex-start'
-      // Try setting `justifyContent` to `flex-end`.
-      // Try setting `flexDirection` to `row`.
+      // if worm, display worm View, etc etc
       <View style={{flex: 1}}>
-        <View style={{flex: 1, backgroundColor: 'powderblue'}} />
+        <View style={{flex: 1, backgroundColor: 'powderblue'}}>
+
+        </View>
         <View style={{flex: 1, backgroundColor: 'skyblue'}} />
         <View style={{flex: 0.4, flexDirection: 'row', backgroundColor: 'white'}}>
           <View style={styles.container}>
              <Image source={require('./images/compost_bin.png')} style={styles.icon} />
           </View>
           <View style={styles.container}>
-            <TouchableOpacity onPress={() => {}}>
-             <Image source={require('./images/worm_bin.png')} style={styles.worm_bin} />
+            <TouchableOpacity onPress={() => { this.onPress('worm') } }>
+              <Image source={require('./images/worm_bin.png')} style={styles.worm_bin} />
             </TouchableOpacity>
           </View>
           <View style={styles.container}>
