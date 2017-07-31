@@ -9,6 +9,8 @@ import {
 
 import { Constants } from 'expo';
 
+const B = (props) => <Text style={{fontWeight: 'bold'}}>{props.children}</Text>
+
 export default class HomeScreen extends Component {
   static navigationOptions = {
     title: 'Trash or Treasure',
@@ -24,7 +26,7 @@ export default class HomeScreen extends Component {
             source={require('./images/star.png')}
           />
           <Text></Text>
-          <Text> Search. Scan. Browse. </Text>
+          <Text><B>Search. Scan. Browse.</B></Text>
           <Text> Check which bin to put it in. </Text>
         </View>
 
