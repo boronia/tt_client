@@ -43,7 +43,7 @@ const data = [
 const styles_header = StyleSheet.create({
   container: {
     flex: 1,
-    padding: 8,
+    padding: 7,
     flexDirection: 'row',
     alignItems: 'center',
     backgroundColor: '#C1C1C1',
@@ -55,25 +55,6 @@ const styles_header = StyleSheet.create({
     fontSize: 15,
     backgroundColor: '#FFFFFF',
     borderRadius: 2,
-  },
-});
-
-const styles_footer = StyleSheet.create({
-  container: {
-    flex: 1,
-    padding: 8,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  button: {
-    borderColor: '#8E8E8E',
-    borderWidth: StyleSheet.hairlineWidth,
-    paddingHorizontal: 20,
-    paddingVertical: 10,
-    borderRadius: 5,
-  },
-  text: {
-    color: '#8E8E8E',
   },
 });
 
@@ -103,7 +84,8 @@ const styles_row = StyleSheet.create({
   },
   photo: {
     height: 40,
-    width: 40
+    width: 40,
+    borderRadius: 10
   },
 });
 
@@ -113,14 +95,6 @@ const Row = (props) => (
     <Text style={styles_row.text}>
       {`${props.name}`}
     </Text>
-  </View>
-);
-
-const Footer = () => (
-  <View style={styles_footer.container}>
-    <TouchableOpacity style={styles_footer.button} onPress={() => Alert.alert('No more!')}>
-      <Text style={styles_footer.text}>Load More</Text>
-    </TouchableOpacity>
   </View>
 );
 
