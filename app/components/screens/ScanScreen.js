@@ -40,7 +40,7 @@ export default class ScanScreen extends Component {
    _handleBarCodeRead = data => {
      const { navigate } = this.props.navigation;
      if (this.state.scanned == 'false') {
-       urlBase = 'http://b4bb614c.ngrok.io/barcodes/search'
+       urlBase = 'http://7a394ee3.ngrok.io/barcodes/search'
        barcode = data['data']
        url = urlBase + '?barcode=' + barcode
        fetch(url)
@@ -52,6 +52,7 @@ export default class ScanScreen extends Component {
              'Scan successful!',
              responseJson.description
            );
+           navigate('Result');
          })
          .catch((error) =>
          {

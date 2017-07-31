@@ -5,13 +5,15 @@ import ScanScreen from './app/components/screens/ScanScreen'
 import PlasticScreen from './app/components/screens/PlasticScreen'
 import BinScreen from './app/components/screens/BinScreen'
 import SearchScreen from './app/components/screens/SearchScreen'
+import ScanResultScreen from './app/components/screens/ScanResultScreen'
 
 const  SimpleAppNavigator = StackNavigator({
   Home: { screen: HomeScreen },
   Scan: { screen: ScanScreen },
   Plastics: { screen: PlasticScreen },
   Bin: { screen: BinScreen },
-  Search: {screen: SearchScreen}
+  Search: {screen: SearchScreen},
+  Result: {screen: ScanResultScreen}
 });
 
 const AppNavigation = () => (
