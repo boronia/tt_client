@@ -30,7 +30,7 @@ export default class HomeScreen extends Component {
 
         <View style={{flex: 1, flexDirection: 'row'}}>
            <View style={small_pane_styles.container}>
-             <TouchableOpacity onPress={() => navigate('Scan')}>
+             <TouchableOpacity onPress={() => navigate('Search')}>
                 <Image
                   source={require('./images/search.png')}
                   style={{ height: 100, width: 100}}
