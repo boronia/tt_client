@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Text, TouchableOpacity, Image, View, StyleSheet } from 'react-native';
+import InnerPane from './InnerPane';
 
 const styles = StyleSheet.create({
   container: {
@@ -31,7 +32,7 @@ export default class BinScreen extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      screen_id : 'compost'
+      screen_id : 'worm'
     };
   }
 
@@ -42,17 +43,25 @@ export default class BinScreen extends Component {
   }
 
   render() {
+    var compost = <InnerPane bin_type='compost'/>
+    var worm = <InnerPane bin_type='worm'/>
+    var green = <InnerPane bin_type='organic'/>
+    var yellow = <InnerPane bin_type='recycle'/>
+    var red = <InnerPane bin_type='landfill'/>
+    var panes = {'compost': compost, 'worm': null, 'organic': green, 'recycle': yellow, 'landfill': red};
 
     return (
       // if worm, display worm View, etc etc
       <View style={{flex: 1}}>
-        <View style={{flex: 1, backgroundColor: 'powderblue'}}>
-
+        {panes[this.state.screen_id]}
+        <View style={{flex: 1, backgroundColor: 'skyblue'}}>
+          <Text>{this.state.screen_id}</Text>
         </View>
-        <View style={{flex: 1, backgroundColor: 'skyblue'}} />
         <View style={{flex: 0.4, flexDirection: 'row', backgroundColor: 'white'}}>
           <View style={styles.container}>
-             <Image source={require('./images/compost_bin.png')} style={styles.icon} />
+            <TouchableOpacity onPress={() => { this.onPress('compost') } }>
+              <Image source={require('./images/compost_bin.png')} style={styles.icon} />
+            </TouchableOpacity>
           </View>
           <View style={styles.container}>
             <TouchableOpacity onPress={() => { this.onPress('worm') } }>
@@ -60,13 +69,19 @@ export default class BinScreen extends Component {
             </TouchableOpacity>
           </View>
           <View style={styles.container}>
+            <TouchableOpacity onPress={() => { this.onPress('organic') } }>
              <Image source={require('./images/organic.png')} style={styles.icon} />
+            </TouchableOpacity>
           </View>
           <View style={styles.container}>
+            <TouchableOpacity onPress={() => { this.onPress('recycle') } }>
              <Image source={require('./images/recycle_bin.png')} style={styles.icon} />
+            </TouchableOpacity>
           </View>
           <View style={styles.container}>
+            <TouchableOpacity onPress={() => { this.onPress('landfill') } }>
              <Image source={require('./images/landfill.png')} style={styles.icon} />
+            </TouchableOpacity>
           </View>
         </View>
       </View>
