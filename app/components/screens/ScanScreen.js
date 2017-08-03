@@ -40,7 +40,7 @@ export default class ScanScreen extends Component {
    _handleBarCodeRead = data => {
      const { navigate } = this.props.navigation;
      if (this.state.scanned == 'false') {
-       urlBase = 'http://7a394ee3.ngrok.io/barcodes/search'
+       urlBase = 'http://76f03b6b.ngrok.io/barcodes/search'
        barcode = data['data']
        url = urlBase + '?barcode=' + barcode
        fetch(url)

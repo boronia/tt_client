@@ -13,9 +13,14 @@ const styles_row = StyleSheet.create({
     fontSize: 16,
   },
   photo: {
-    height: 48,
-    width: 31
+    height: 52,
+    width: 33
   },
+  icon: {
+    height: 45,
+    width: 35,
+    padding: 10
+  }
 });
 
 export default class Row extends Component {
@@ -35,13 +40,15 @@ export default class Row extends Component {
     }
     this.state = {
       description: props.description,
-      icon: icon_req
+      icon: icon_req,
+      plastic_type: props.plastic_type
     };
   }
 
   render() {
     return (
       <View style={styles_row.container}>
+        <Image source={this.state.plastic_type} style={styles_row.icon} />
         <Image source={this.state.icon} style={styles_row.photo} />
         <Text style={styles_row.text}>
           {`${this.state.description}...`}

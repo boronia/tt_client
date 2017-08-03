@@ -6,36 +6,43 @@ const data = [
   {
     "name": "PET",
     "bin_type": "yellow",
+    "plastic_type": require('./images/pet1.png'),
     "description": "Soft drink and juice bottles"
   },
   {
     "name": "HDPE",
     "bin_type": "yellow",
+    "plastic_type": require('./images/pehd.png'),
     "description": "Milk bottles, washing up"
   },
   {
     "name": "PVC",
     "bin_type": "green_loc",
+    "plastic_type": require('./images/pvc.png'),
     "description": "Squeeze bottles, cling film"
   },
   {
     "name": "LDPE",
     "bin_type": "green_loc",
+    "plastic_type": require('./images/ldpe.png'),
     "description": "Carrier bags, bin liners"
   },
   {
     "name": "PP",
     "bin_type": "yellow",
+    "plastic_type": require('./images/pp.png'),
     "description": "Butter tubs, ice cream"
   },
   {
     "name": "PS",
     "bin_type": "red",
+    "plastic_type": require('./images/ps.png'),
     "description": "Plastic cutlery, foam cups"
   },
   {
     "name": "OTHER",
     "bin_type": "green_loc",
+    "plastic_type": require('./images/other.jpg'),
     "description": "Acrylic, nylon"
   },
 ]
